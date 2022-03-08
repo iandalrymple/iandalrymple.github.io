@@ -1,9 +1,14 @@
 ---
 layout: post
-title: "Portfolio Lanch"
-subtitle: "Coding projects and highlighted GitHub repos"
-background: '/img/posts/01.jpg'
+title: "Triple DES"
+subtitle: "C# .Net Core Console Application"
+background: ''
 ---
 
-# Headline 
-Official launch of my professional portfolio. The process for building the site was taken from Dataslice on YouTube.
+<p>
+Check out the GitHub pages link for instructions on how to use this .NET Core console application
+for encrypting and decrypting Triple DES files:
+</p>
+
+<a href="https://iandalrymple.github.io/TripleDes_Windows/">Triple DES GitHub Page</a>
+
