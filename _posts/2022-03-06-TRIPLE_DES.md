@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Triple DES"
-subtitle: "C# .Net Core Console Application"
+subtitle: ".NET Core Console Application written in C#"
 background: ''
 ---
 
