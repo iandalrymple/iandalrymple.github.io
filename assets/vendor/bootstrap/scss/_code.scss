@@ -36,7 +36,11 @@ pre {
   // Account for some code outputs that place code tags in pre tags
   code {
     //@include font-size(inherit);
+
+    // Changes I made from template
     @include font-size(12);
+    // Changes I made from template
+
     color: inherit;
     word-break: normal;
   }
