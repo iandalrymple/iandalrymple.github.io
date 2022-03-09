@@ -37,7 +37,8 @@
             </a>
           </li>
           {% endif %}
-          {% if site.linkedin_username %}
+
+          <!-- Not sure why the linked in site commented out below does not work  -->
           <li class="list-inline-item">
             <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
               <span class="fa-stack fa-lg">
@@ -46,7 +47,17 @@
               </span>
             </a>
           </li>
-          {% endif %}
+
+          <!-- {% if site.linkedin_username %}
+          <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          {% endif %} -->
           {% if site.github_username %}
           <li class="list-inline-item">
             <a href="https://github.com/{{ site.github_username }}">
