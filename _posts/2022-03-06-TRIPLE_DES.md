@@ -2,7 +2,7 @@
 layout: post
 title: "Triple DES"
 subtitle: ".NET Core Console Application written in C#"
-background: ''
+background: '/img/PCBA.jpg'
 ---
 
 <p>
