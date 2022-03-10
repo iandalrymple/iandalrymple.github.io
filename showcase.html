@@ -8,9 +8,25 @@ background: '/img/PCBA.jpg'
 <h1>Background</h1>
 
 <p><a href="https://ermascustard.com">Erma's Original Frozen Custard</a> is a walk-up frozen custard establishement in SE Michigan. The stores are located in Saint Clair Shores, Shelby Twp. and Warren. 
-    The stores use Upserve for POS, DoorDash for online orders and delivery. These systems have been integrated with weather data from Open Weather Map 
+    The stores use Upserve for POS, Shopfiy for online orders and DoorDash for delivery. These systems have been integrated with weather data from Open Weather Map 
     to predict the sales in order to properly staff the stores. Additionally, a reporting pipline has been created which pushes the aforementioned data 
-    up to Qlik Cloud using the Qlik DataTransfer tool. The graphic below outlines the piplines. 
+    up to Qlik Cloud using the Qlik DataTransfer tool. The sections below will describe the design elements of these pipelines and the various applications 
+    that are used to facilitate. 
 </p>
 
+<br>
+
+<h1>Process Flow</h1>
 <img src='/img/ERMAS_MASTER_DATA_FLOW.jpg' alt='You should be seeing a picture'>
+
+<br>
+<br>
+<br>
+
+<h1>API Client Applications</h1>
+<p>The API client applications that extract data from the cloud sources are all .NET Framework console applications written in C#. The use RestSharp and NewtonSoft to retrieve the data from the source systems. 
+    The JSON retrieved is parsed and inserted into tables that were set up to reflect the likley schema used in the source system (mostly normalized). The retrievals are coordinated using Windows Task Scheduler. 
+    All of the solutions use Log4Net for logging and all secrets are encrypted and retrieved at runtime. 
+
+    The <a href="https://iandalrymple.github.io/WeatherReporter_PUBLIC/">Open Weather Map Solution</a> is public on my GitHub. The solution is very similar to the others and since the others contain IP they are not going to be made public anytime soon. 
+</p>
