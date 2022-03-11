@@ -30,3 +30,21 @@ background: '/img/PCBA.jpg'
 
     The <a href="https://iandalrymple.github.io/WeatherReporter_PUBLIC/">Open Weather Map Solution</a> is public on my GitHub. The solution is very similar to the others and since the others contain IP they are not going to be made public anytime soon. 
 </p>
+
+<h1>Model Builder</h1>
+
+<p>The intent of the modelling is to predict sales as function of weather and any other temporal predictors available. 
+    The application extracts data stored by the API client applications described in the previous step as well CSV files from DoorDash / historical sales. The CSV files must be manually extracted since we currently do not have access 
+    to DoorDash backend via an API at this time. The modeller takes the database and CSV sales data and the database weather data performing typical preprocessing (missing value handling, reshaping, combining, 
+    aggregating, standardizing, splitting). Once the predictor and label frames are created for both the training and test sets a gradient boost regressor, random forest regressor, and KNN model are all fit using the best 
+    hyper-parameters from an exhaustive grid search. Each of the models is then used to make predictions with the test set and the resultant RMSE is calculated. The model with the best RMSE is then pickled and sent off to 
+    be used in the prediction web site which is described further down on this page.
+</p>
+<p>The model builder application is written in Python 3.8 (scikit-learn / Pandas / Numpy) and was developed in Visual Studio 2022. The solution implements a singleton debugging logger, uses a config file for modifications to settings, 
+    implements multi-threading for data extraction / modelling tasks and follows single responsibility design patterns. The repo for the modelling solution is not public since it is intellectual property. 
+</p>
+
+<h1>TO BE CONTINUED.........</h1>
+<p>
+    This page is a work in progress please check back for future changes...........
+</p>
