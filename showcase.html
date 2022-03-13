@@ -85,13 +85,16 @@ background: '/img/PCBA.jpg'
 
 <h1>Reporting (Section 4)</h1>
 
-<p>The reporting section is responsible for moving data from the SQL server storing the results of the Section 1 client query results to a reporting database and then up to Qlik Cloud. The detailed steps are as follows:
-    - <a href="https://sqlbackupandftp.com/">SQLBackUpAndFTP</a> is used to back up the databases to the local machine. This job runs nightly and is configured to send and email should an error occur.
-    - A custom script runs 
-
+<p>The reporting section is responsible for moving data from the SQL server storing the results of the Section 1 client query results to a reporting database and then up to Qlik Cloud. 
+    The detailed steps are as follows:
 </p>
 
-<h1>TO BE CONTINUED.........</h1>
-<p>
-    This page is a work in progress please check back for future changes...........
-</p>
+<ul>
+    <li><a href="https://sqlbackupandftp.com/">SQLBackUpAndFTP</a> is used to back up the databases to the local machine. This job runs nightly and is configured to send and email should an error occur.</li>
+    <li>A custom .NET Framework console application written in C# ensures only the latest 10 backups are present on the SQL server host machine and moves the latest to on premise file server.</li>
+    <li>Another CRON .NET Core console application written in C# gets a latest copy of each back up from the file server, decrypts / unzips the compressed file using the 7za.exe (7zip application), and restores 
+        the backups to a SQL server instance on another host machine.</li>
+    <li><a href="https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/QlikDataTransfer/install-Qlik-DataTransfer.htm">Qlik DataTransfer</a> application is used to transfer data from the 
+        local server to Qlik Cloud tenant.</li>
+    <li>Qlik Cloud is then used to build visualizations such as the example shown <a href="/img/QlikYearlySummary.pdf">here</a> which displays the yearly summary report.</li>
+</ul>
