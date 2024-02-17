@@ -5,13 +5,16 @@ description: Pipeline Example
 background: '/img/PCBA.jpg'
 ---
 
-<h1>Background</h1>
+<h1>Backgroundggg</h1>
 
 <p><a href="https://ermascustard.com">Erma's Original Frozen Custard</a> is a walk-up frozen custard establishement in SE Michigan. The stores are located in Saint Clair Shores, Shelby Twp. and Warren. 
     The stores use Upserve for POS, Shopfiy for online orders and DoorDash for delivery. These systems have been integrated with weather data from Open Weather Map 
     to predict the sales in order to properly staff the stores. Additionally, a reporting pipline has been created which pushes the aforementioned data 
     up to Qlik Cloud using the Qlik DataTransfer tool. The sections below will describe the design elements of these pipelines and the various applications 
     that are used to facilitate. 
+	
+	<p>Note 1: The pipeline is being updated with the addition of a new POS. Those changes will be reflected when complete.</p>
+	<p>Note 2: All software descibed herein is property of Erma's Frozen Custard, Inc. and can be made available upon request.</p>
 </p>
 
 <br>
@@ -28,11 +31,8 @@ background: '/img/PCBA.jpg'
 <br>
 
 <h1>API Client Applications (Section 1)</h1>
-<p>The API client applications that extract data from the cloud sources are all .NET Framework console applications written in C#. The use RestSharp and NewtonSoft to retrieve the data from the source systems. 
-    The JSON retrieved is parsed and inserted into tables that were set up to reflect the likley schema used in the source system (mostly normalized). The retrievals are coordinated using Windows Task Scheduler. 
-    All of the solutions use Log4Net for logging and all secrets are encrypted and retrieved at runtime. 
-
-    The <a href="https://iandalrymple.github.io/WeatherReporter_PUBLIC/">Open Weather Map Solution</a> is public on my GitHub. The solution is very similar to the others and since the others contain IP they are not going to be made public anytime soon. 
+<p>The API client applications that extract data from the cloud sources are all .NET Core console application written in C# and triggered with task scheduler. The use RestSharp and NewtonSoft to retrieve the data from the source systems. 
+    The JSON retrieved is parsed and inserted into tables that were set up to reflect the likley schema used in the source system (mostly normalized). All of the solutions use Log4Net for logging and all secrets are encrypted and retrieved at runtime. 
 </p>
 
 <h1>Model Builder (Section 2)</h1>
@@ -80,7 +80,6 @@ background: '/img/PCBA.jpg'
 </p>
 
 <p>The weather collection client is identical to the one used in Section 1. 
-    Here is a link to the repo again <a href="https://iandalrymple.github.io/WeatherReporter_PUBLIC/">Open Weather Map Solution</a>.
 </p>
 
 <h1>Reporting (Section 4)</h1>
